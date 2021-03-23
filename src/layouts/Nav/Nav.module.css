@@ -1,0 +1,11 @@
+.nav__box {
+    background-color: green;
+}
+
+.nav__item {
+    color: #fff;
+}
+
+.nav__item_active > a{
+    color: gold;
+}
