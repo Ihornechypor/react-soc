@@ -5,7 +5,12 @@ import Avatar from "../../Avatar/Avatar";
 const Post = () => {
   return (
     <li className={classes.post__item}>
-      <Avatar /> Avapost 1
+      <Avatar />
+      <div>
+        <p>post 1</p>
+
+        <button>like</button>
+      </div>
     </li>
   );
 };
