@@ -10,10 +10,8 @@ const Posts = () => {
         <button>add post</button>
       </div>
       <ul className={classes.post__list}>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Post msg="mow are yoy" />
+        <Post msg="this is my first post" />
       </ul>
     </div>
   );

@@ -6,6 +6,7 @@ import classes from "./Profile.module.css";
 const Profile = () => {
   return (
     <>
+      <img src={userBg} alt="" className={classes.profile__bg} />
       <Posts />
     </>
   );
