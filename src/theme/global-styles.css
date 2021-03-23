@@ -12,6 +12,7 @@
   .app-header {
     grid-area: header;
   }
+
   
   .app-nav {
     grid-area: nav;
@@ -19,6 +20,10 @@
   
   .app-main {
     grid-area: main;
+  }
+
+  img {
+      width: 100%;
   }
 
   a {

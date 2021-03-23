@@ -1,0 +1,8 @@
+.avatar__box {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.avatar__img {
+    max-width: 40px; 
+}
