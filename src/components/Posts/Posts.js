@@ -10,8 +10,8 @@ const Posts = () => {
         <button>add post</button>
       </div>
       <ul className={classes.post__list}>
-        <Post msg="mow are yoy" />
-        <Post msg="this is my first post" />
+        <Post msg="mow are yoy" likes={3} />
+        <Post msg="this is my first post" likes={2} />
       </ul>
     </div>
   );
