@@ -6,6 +6,6 @@
     color: #fff;
 }
 
-.nav__item_active > a{
+.nav__item_active {
     color: gold;
 }

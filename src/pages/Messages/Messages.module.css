@@ -1,0 +1,25 @@
+.messages__box {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.messages__autors {
+
+}
+
+.messages__autors {
+    padding: 10px;
+}
+
+.messages__autor_active {
+    color: gold;
+}
+
+.messages__letters {
+    padding: 10px;
+}
+
+.messages__letter{
+    
+
+}
