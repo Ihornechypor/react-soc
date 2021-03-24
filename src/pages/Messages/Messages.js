@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classes from "./Messages.module.css";
 
 const Messages = () => (
@@ -7,9 +8,11 @@ const Messages = () => (
       <li
         className={`${classes.messages__autor} ${classes.messages__autor_active}`}
       >
-        ihor
+        <NavLink to="/messages/1">ihor</NavLink>
       </li>
-      <li className={classes.messages__autor}>roman</li>
+      <li className={classes.messages__autor}>
+        <NavLink to="/messages/2">roman</NavLink>
+      </li>
     </ul>
     <div className={classes.messages__letters}>
       <p className={classes.messages__letter}>1</p>
