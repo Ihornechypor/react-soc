@@ -1,0 +1,7 @@
+.messages__autor {
+ 
+}
+
+.messages__autor_active > a{
+    color: gold;
+}

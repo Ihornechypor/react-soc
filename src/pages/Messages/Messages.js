@@ -1,23 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import MessagesAutor from "../../components/MessagesAutors/MessagesAutors";
+import MessagesLetters from "../../components/MessagesLetters/MessagesLetters";
 import classes from "./Messages.module.css";
 
 const Messages = () => (
   <div className={classes.messages__box}>
-    <ul className={classes.messages__autors}>
-      <li
-        className={`${classes.messages__autor} ${classes.messages__autor_active}`}
-      >
-        <NavLink to="/messages/1">ihor</NavLink>
-      </li>
-      <li className={classes.messages__autor}>
-        <NavLink to="/messages/2">roman</NavLink>
-      </li>
+    <ul className={classes.messages__autors_box}>
+      <MessagesAutor name="ihor" id="1" active={true} />
+      <MessagesAutor name="roman" id="3" />
     </ul>
-    <div className={classes.messages__letters}>
-      <p className={classes.messages__letter}>1</p>
-      <p className={classes.messages__letter}>2</p>
-      <p className={classes.messages__letter}>3</p>
+    <div className={classes.messages__letters_box}>
+      <MessagesLetters msg="hi" />
+      <MessagesLetters msg="hi1" />
+      <MessagesLetters msg="hi2" />
     </div>
   </div>
 );

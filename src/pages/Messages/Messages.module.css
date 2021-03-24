@@ -3,23 +3,12 @@
     grid-template-columns: 2fr 10fr;
 }
 
-.messages__autors {
-
-}
-
-.messages__autors {
+.messages__autors_box {
     padding: 10px;
 }
 
-.messages__autor_active {
-    color: gold;
-}
-
-.messages__letters {
+.messages__letters_box {
     padding: 10px;
 }
 
-.messages__letter{
-    
 
-}
