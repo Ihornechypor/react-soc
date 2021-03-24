@@ -4,7 +4,7 @@ import classes from "./Avatar.module.css";
 
 const Avatar = () => (
   <div className={classes.avatar__box}>
-    <img src={AvatartIcon} className={classes.avatar__img} />
+    <img src={AvatartIcon} className={classes.avatar__img} alt="" />
   </div>
 );
 
