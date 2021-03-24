@@ -1,19 +1,24 @@
 import React from "react";
-import MessagesAutor from "../../components/MessagesAutors/MessagesAutors";
+import MessagesAutors from "../../components/MessagesAutors/MessagesAutors";
 import MessagesLetters from "../../components/MessagesLetters/MessagesLetters";
 import classes from "./Messages.module.css";
 
+let messagesData = [
+  { id: 1, name: "ihor" },
+  { id: 2, name: "Roman" },
+  { id: 3, name: "Petro" },
+];
+
+let messagesText = [
+  { id: 1, text: "hi" },
+  { id: 2, text: "hello" },
+  { id: 3, text: "pa" },
+];
+
 const Messages = () => (
   <div className={classes.messages__box}>
-    <ul className={classes.messages__autors_box}>
-      <MessagesAutor name="ihor" id="1" active={true} />
-      <MessagesAutor name="roman" id="3" />
-    </ul>
-    <div className={classes.messages__letters_box}>
-      <MessagesLetters msg="hi" />
-      <MessagesLetters msg="hi1" />
-      <MessagesLetters msg="hi2" />
-    </div>
+    <MessagesAutors data={messagesData} />
+    <MessagesLetters msgs={messagesText} />
   </div>
 );
 
