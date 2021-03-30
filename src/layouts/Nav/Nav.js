@@ -17,7 +17,12 @@ const Nav = () => {
           </NavLink>
         </li>
         <li className={classes.nav__item}>
-          <NavLink to="/news" activeClassName={classes.nav__item_active}>
+          <NavLink
+            to="/news
+          
+          "
+            activeClassName={classes.nav__item_active}
+          >
             News
           </NavLink>
         </li>

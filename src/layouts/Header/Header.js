@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className={`app-header ${classes.header__box}`}>
       <img
-        src="https://www.flaticon.com/svg/vstatic/svg/762/762386.svg?token=exp=1616505007~hmac=9d0abfedb08671dcfe4e4f8c7c9d5b4e"
+        src="https://www.flaticon.com/svg/vstatic/svg/731/731985.svg?token=exp=1616670803~hmac=b77982a2477ce1ae862af54df80af4c0"
         alt=""
         className={classes.header__logo}
       />

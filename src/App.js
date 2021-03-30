@@ -8,17 +8,25 @@ import Messages from "./pages/Messages/Messages";
 import News from "./pages/News/News";
 import Music from "./pages/Music/Music";
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Nav />
         <Main>
-          <Route path="/messages" component={Messages} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
+          <Route
+            path="/messages"
+            render={() => (
+              <Messages
+                messagesData={props.messagesData}
+                messagesText={props.messagesText}
+              />
+            )}
+          />
+          <Route path="/profile" render={() => <Profile />} />
+          <Route path="/news" render={() => <News />} />
+          <Route path="/music" render={() => <Music />} />
         </Main>
       </div>
     </BrowserRouter>
