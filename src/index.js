@@ -11,14 +11,23 @@ let messagesData = [
 ];
 
 let messagesText = [
+  { id: 1, text: "hi" },
+  { id: 2, text: "hello" },
+  { id: 3, text: "pa" },
+];
+
+let userPosts = [
   { id: 1, text: "hi", likes: 3 },
   { id: 2, text: "hello", likes: 1 },
-  { id: 3, text: "pa", likes: 2 },
 ];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App messagesData={messagesData} messagesText={messagesText} />
+    <App
+      messagesData={messagesData}
+      messagesText={messagesText}
+      userPosts={userPosts}
+    />
   </React.StrictMode>,
   document.getElementById("root")
 );
