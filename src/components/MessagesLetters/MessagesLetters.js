@@ -7,7 +7,6 @@ const MessagesLetters = (props, ref) => {
       {props.msgs.map((item, index) => (
         <div key={index}>
           <p className={classes.messages__letter}>{item.text}</p>
-          <button ref={ref}>{item.likes}</button>
         </div>
       ))}
     </div>

@@ -17,16 +17,11 @@ const App = (props) => {
         <Main>
           <Route
             path="/messages"
-            render={() => (
-              <Messages
-                messagesData={props.messagesData}
-                messagesText={props.messagesText}
-              />
-            )}
+            render={() => <Messages state={props.state.profilePage} />}
           />
           <Route
             path="/profile"
-            render={() => <Profile userPosts={props.userPosts} />}
+            render={() => <Profile state={props.state.profilePage} />}
           />
           <Route path="/news" render={() => <News />} />
           <Route path="/music" render={() => <Music />} />

@@ -10,8 +10,8 @@ const Messages = (props) => {
   });
   return (
     <div className={classes.messages__box}>
-      <MessagesAutors data={props.messagesData} />x
-      <MessagesLetters msgs={props.messagesText} ref={someRef} />
+      <MessagesAutors data={props.state.messagesData} />
+      <MessagesLetters msgs={props.state.messagesText} ref={someRef} />
     </div>
   );
 };
