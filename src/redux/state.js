@@ -20,3 +20,16 @@ let state = {
 };
 
 export default state;
+
+export const addPost = (postMessage) => {
+  debugger;
+  let newPost = {
+    id: 3,
+    text: postMessage,
+    likes: 0,
+  };
+  console.log(newPost);
+
+  state.profilePage.userPosts.push(newPost);
+  debugger;
+};

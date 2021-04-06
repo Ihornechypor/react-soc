@@ -1,4 +1,4 @@
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./theme/global-styles.css";
 import Header from "./layouts/Header/Header";
 import Nav from "./layouts/Nav/Nav";
@@ -10,24 +10,24 @@ import Music from "./pages/Music/Music";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Nav />
-        <Main>
-          <Route
-            path="/messages"
-            render={() => <Messages state={props.state.messagesPage} />}
-          />
-          <Route
-            path="/profile"
-            render={() => <Profile state={props.state.profilePage} />}
-          />
-          <Route path="/news" render={() => <News />} />
-          <Route path="/music" render={() => <Music />} />
-        </Main>
-      </div>
-    </BrowserRouter>
+    <div className="app-wrapper">
+      <Header />
+      <Nav />
+      <Main>
+        <Route
+          path="/messages"
+          render={() => <Messages state={props.state.messagesPage} />}
+        />
+        <Route
+          path="/profile"
+          render={() => (
+            <Profile state={props.state.profilePage} addPost={props.addPost} />
+          )}
+        />
+        <Route path="/news" render={() => <News />} />
+        <Route path="/music" render={() => <Music />} />
+      </Main>
+    </div>
   );
 };
 
