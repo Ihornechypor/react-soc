@@ -6,8 +6,8 @@ const Posts = (props) => {
   let postRef = useRef(null);
 
   const onAddPost = () => {
-    debugger;
     props.addPost(postRef.current.value);
+    postRef.current.value = "";
   };
 
   return (
