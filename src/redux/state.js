@@ -1,5 +1,5 @@
 let state = {
-  messages: {
+  messagesPage: {
     messagesData: [
       { id: 1, name: "ihor" },
       { id: 2, name: "Roman" },
@@ -11,7 +11,7 @@ let state = {
       { id: 3, text: "pa" },
     ],
   },
-  profile: {
+  profilePage: {
     userPosts: [
       { id: 1, text: "hi", likes: 3 },
       { id: 2, text: "hello", likes: 1 },
