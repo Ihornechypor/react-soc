@@ -6,9 +6,7 @@ const Posts = (props) => {
   let postRef = useRef(null);
 
   const onAddPost = () => {
-    let text = postRef.current.value;
-    props.addPost(text);
-    props.updNewPostText("");
+    props.addPost();
   };
 
   const onPostChage = () => {
