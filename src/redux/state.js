@@ -26,10 +26,10 @@ window.state = state;
 
 export default state;
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
   let newPost = {
     id: 3,
-    text: postMessage,
+    text: state.profilePage.newPostText,
     likes: 0,
   };
   state.profilePage.userPosts.push(newPost);
