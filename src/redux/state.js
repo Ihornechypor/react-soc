@@ -18,8 +18,11 @@ let state = {
       { id: 1, text: "hi", likes: 3 },
       { id: 2, text: "hello", likes: 1 },
     ],
+    newPostText: "some text",
   },
 };
+
+window.state = state;
 
 export default state;
 
@@ -30,5 +33,10 @@ export const addPost = (postMessage) => {
     likes: 0,
   };
   state.profilePage.userPosts.push(newPost);
+  renderTree(state);
+};
+
+export const updNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   renderTree(state);
 };

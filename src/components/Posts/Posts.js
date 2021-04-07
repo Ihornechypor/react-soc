@@ -6,15 +6,29 @@ const Posts = (props) => {
   let postRef = useRef(null);
 
   const onAddPost = () => {
-    props.addPost(postRef.current.value);
-    postRef.current.value = "";
+    let text = postRef.current.value;
+    props.addPost(text);
+    props.updNewPostText("");
+  };
+
+  const onPostChage = () => {
+    let newText = postRef.current.value;
+    props.updNewPostText(newText);
   };
 
   return (
     <div className={classes.posts__box}>
       <div className={classes.post__new}>
         <div>
-          <textarea name="" id="" cols="30" rows="10" ref={postRef}></textarea>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            ref={postRef}
+            value={props.newPostText}
+            onChange={onPostChage}
+          />
         </div>
         <div>
           <button onClick={onAddPost}>add post</button>
