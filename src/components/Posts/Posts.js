@@ -11,7 +11,8 @@ const Posts = (props) => {
 
   const onPostChage = () => {
     let newText = postRef.current.value;
-    props.dispatch({ type: "UPD-NEW-POST-TEXT", newText });
+    let action = { type: "UPD-NEW-POST-TEXT", newText };
+    props.dispatch(action);
   };
 
   return (
