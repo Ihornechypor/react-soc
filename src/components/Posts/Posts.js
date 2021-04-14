@@ -6,12 +6,12 @@ const Posts = (props) => {
   let postRef = useRef(null);
 
   const onAddPost = () => {
-    props.addPost();
+    props.dispatch({ type: "ADD-POST" });
   };
 
   const onPostChage = () => {
     let newText = postRef.current.value;
-    props.updNewPostText(newText);
+    props.dispatch({ type: "UPD-NEW-POST-TEXT", newText });
   };
 
   return (
