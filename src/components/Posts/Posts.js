@@ -1,17 +1,21 @@
 import React, { useRef } from "react";
 import Post from "./Post/Post";
 import classes from "./Posts.module.css";
+import {
+  addPostActionCreator,
+  onPostChageActionCreator,
+} from "../../redux/state";
 
 const Posts = (props) => {
   let postRef = useRef(null);
 
   const onAddPost = () => {
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostActionCreator());
   };
 
   const onPostChage = () => {
     let newText = postRef.current.value;
-    let action = { type: "UPD-NEW-POST-TEXT", newText };
+    let action = onPostChageActionCreator(newText);
     props.dispatch(action);
   };
 
