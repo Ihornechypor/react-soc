@@ -16,4 +16,13 @@ const messagesReducer = (state, action) => {
   }
 };
 
+export const sendNewMessageCreator = () => ({
+  type: SEND_MESSAGE,
+});
+
+export const newMessagesCreator = (newMessage) => ({
+  type: UPD_NEW_MESSAGES_TEXTS,
+  newMessage,
+});
+
 export default messagesReducer;

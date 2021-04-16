@@ -20,4 +20,13 @@ const profileReducer = (state, action) => {
   }
 };
 
+export const addPostActionCreator = () => ({
+  type: ADD_POST,
+});
+
+export const onPostChageActionCreator = (newText) => ({
+  type: ADD_NEW_POST_TEXT,
+  newText,
+});
+
 export default profileReducer;
