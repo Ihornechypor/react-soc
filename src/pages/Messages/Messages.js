@@ -8,7 +8,7 @@ const Messages = (props) => {
   let state = props.store.getState().messagesPage;
 
   let newMsg = state.messagesNewTexts;
-  console.log(newMsg);
+
   const onAddAnswer = () => {
     props.store.dispatch(sendNewMessageCreator());
   };
