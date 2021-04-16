@@ -5,13 +5,13 @@ const profileReducer = (state, action) => {
   if (action.type === ADD_POST) {
     let newPost = {
       id: 3,
-      text: state.profilePage.newPostText,
+      text: state.newPostText,
       likes: 0,
     };
-    state.profilePage.userPosts.push(newPost);
-    state.profilePage.newPostText = "";
+    state.userPosts.push(newPost);
+    state.newPostText = "";
   } else if (action.type === ADD_NEW_POST_TEXT) {
-    state.profilePage.newPostText = action.newText;
+    state.newPostText = action.newText;
   }
 
   return state;

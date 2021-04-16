@@ -7,7 +7,8 @@ import classes from "./Messages.module.css";
 const Messages = (props) => {
   let state = props.store.getState().messagesPage;
 
-  let newMsg = state.newMessage;
+  let newMsg = state.messagesNewTexts;
+  console.log(newMsg);
   const onAddAnswer = () => {
     props.store.dispatch(sendNewMessageCreator());
   };
@@ -23,6 +24,7 @@ const Messages = (props) => {
       <div>
         <textarea
           value={newMsg}
+          placeholder="enter msg"
           onChange={onNewMessageChage}
           name=""
           id=""
