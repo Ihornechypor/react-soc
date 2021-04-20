@@ -22,7 +22,10 @@ let renderTree = (state) => {
 };
 
 renderTree(store.getState());
-store.subscribe(renderTree);
+store.subscribe(() => {
+  let state = store.getState();
+  renderTree(state);
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
