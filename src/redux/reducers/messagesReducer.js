@@ -1,7 +1,21 @@
 const SEND_MESSAGE = "SEND-MESSAGE";
 const UPD_NEW_MESSAGES_TEXTS = "UPD-NEW-MESSAGES_TEXTS";
 
-const messagesReducer = (state, action) => {
+let initialState = {
+  messagesData: [
+    { id: 1, name: "Ihor" },
+    { id: 2, name: "Roman" },
+    { id: 3, name: "Petro" },
+  ],
+  messagesText: [
+    { id: 1, text: "hi" },
+    { id: 2, text: "hello" },
+    { id: 3, text: "pa" },
+  ],
+  messagesNewTexts: "",
+};
+
+const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPD_NEW_MESSAGES_TEXTS:
       state.messagesNewTexts = action.newMessage;

@@ -5,6 +5,7 @@ import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
 // import classes from "./Profile.module.css";
 
 const Profile = (props) => {
+  console.log(props);
   return (
     <>
       <ProfileInfo profileBg={userBg} profileInfo="text text" />
