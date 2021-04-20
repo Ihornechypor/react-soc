@@ -1,11 +1,6 @@
 import messagesReducer from "./reducers/messagesReducer";
-import profileReducer from "./reducers/profileRecer";
-import sidebarRecer from "./reducers/sidebarRecer";
-
-const ADD_POST = "ADD-POST";
-const ADD_NEW_POST_TEXT = "UPD-NEW-POST-TEXT";
-const SEND_MESSAGE = "SEND-MESSAGE";
-const UPD_NEW_MESSAGES_TEXTS = "UPD-NEW-MESSAGES_TEXTS";
+import profileReducer from "./reducers/profileReducer";
+import sidebarRecer from "./reducers/sidebarReducer";
 
 let store = {
   _state: {
@@ -47,28 +42,9 @@ let store = {
       action
     );
     this._state.sedebarPage = sidebarRecer(this._state.sedebarPage, action);
-
     this._callSubscriber(this._state);
   },
 };
-
-export const addPostActionCreator = () => ({
-  type: ADD_POST,
-});
-
-export const sendNewMessageCreator = () => ({
-  type: SEND_MESSAGE,
-});
-
-export const newMessagesCreator = (newMessage) => ({
-  type: UPD_NEW_MESSAGES_TEXTS,
-  newMessage,
-});
-
-export const onPostChageActionCreator = (newText) => ({
-  type: ADD_NEW_POST_TEXT,
-  newText,
-});
 
 export default store;
 window.store = store;

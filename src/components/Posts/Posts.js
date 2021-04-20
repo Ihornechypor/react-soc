@@ -4,7 +4,7 @@ import classes from "./Posts.module.css";
 import {
   addPostActionCreator,
   onPostChageActionCreator,
-} from "../../redux/state";
+} from "../../redux/reducers/profileReducer";
 
 const Posts = (props) => {
   let postRef = useRef(null);

@@ -1,7 +1,10 @@
 import React from "react";
 import MessagesAutors from "../../components/MessagesAutors/MessagesAutors";
 import MessagesLetters from "../../components/MessagesLetters/MessagesLetters";
-import { newMessagesCreator, sendNewMessageCreator } from "../../redux/state";
+import {
+  newMessagesCreator,
+  sendNewMessageCreator,
+} from "../../redux/reducers/messagesReducer";
 import classes from "./Messages.module.css";
 
 const Messages = (props) => {
