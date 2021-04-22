@@ -4,6 +4,7 @@ import MessagesLetters from "../../components/MessagesLetters/MessagesLetters";
 import classes from "./Messages.module.css";
 
 const Messages = (props) => {
+  let state = props.msgData;
   const onAddAnswer = () => {
     props.addAnswer();
   };
@@ -14,11 +15,11 @@ const Messages = (props) => {
 
   return (
     <div className={classes.messages__box}>
-      <MessagesAutors data={props.msgData.messagesData} />
-      <MessagesLetters msgs={props.msgData.messagesText} />
+      <MessagesAutors data={state.messagesData} />
+      <MessagesLetters msgs={state.messagesText} />
       <div>
         <textarea
-          value={props.msgData.messagesNewTexts}
+          value={state.messagesNewTexts}
           placeholder="enter msg"
           onChange={onNewMessageChage}
           name=""

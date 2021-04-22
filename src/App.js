@@ -7,6 +7,7 @@ import Profile from "./pages/Profile/Profile";
 import News from "./pages/News/News";
 import Music from "./pages/Music/Music";
 import MessagesContainer from "./pages/Messages/MessagesContainer";
+import StoreContext from "./StoreContext";
 
 const App = (props) => {
   return (

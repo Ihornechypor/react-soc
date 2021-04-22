@@ -5,16 +5,19 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/redux-sture";
+import StoreContext from "./StoreContext";
 
 let renderTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App
-          state={state}
-          dispatch={store.dispatch.bind(store)}
-          store={store}
-        />
+        <StoreContext.Provider valu={store}>
+          <App
+            state={state}
+            dispatch={store.dispatch.bind(store)}
+            store={store}
+          />
+        </StoreContext.Provider>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")
