@@ -1,22 +1,16 @@
 import React, { useRef } from "react";
 import Post from "./Post/Post";
 import classes from "./Posts.module.css";
-import {
-  addPostActionCreator,
-  onPostChageActionCreator,
-} from "../../redux/reducers/profileReducer";
-
 const Posts = (props) => {
   let postRef = useRef(null);
 
   const onAddPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.addPost();
   };
 
   const onPostChage = () => {
     let newText = postRef.current.value;
-    let action = onPostChageActionCreator(newText);
-    props.dispatch(action);
+    props.postChage(newText);
   };
 
   return (
@@ -39,7 +33,7 @@ const Posts = (props) => {
       </div>
       <h3>My posts</h3>
       <ul className={classes.post__list}>
-        {props.userPosts.map((item, index) => {
+        {props.posts.map((item, index) => {
           return <Post key={index} msg={item.text} likes={item.likes} />;
         })}
       </ul>
