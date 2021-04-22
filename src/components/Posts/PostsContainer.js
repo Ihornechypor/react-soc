@@ -1,31 +1,30 @@
 import React from "react";
 import Posts from "./Posts";
-
+import { connect } from "react-redux";
 import {
   addPostActionCreator,
   onPostChageActionCreator,
 } from "../../redux/reducers/profileReducer";
 
-const PostsContainer = (props) => {
-  let state = props.store.getState();
-
-  const onAddPost = () => {
-    props.store.dispatch(addPostActionCreator());
+const mapStateToProps = (state) => {
+  return {
+    posts: state.profilePage.userPosts,
+    newPostText: state.profilePage.newPostText,
   };
-
-  const onPostChage = (text) => {
-    let action = onPostChageActionCreator(text);
-    props.store.dispatch(action);
-  };
-
-  return (
-    <Posts
-      postChage={onPostChage}
-      addPost={onAddPost}
-      posts={state.profilePage.userPosts}
-      newPostText={state.profilePage.newPostText}
-    />
-  );
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    postChage: () => {
+      dispatch(addPostActionCreator());
+    },
+    onPostChage: (text) => {
+      let action = onPostChageActionCreator(text);
+      dispatch(action);
+    },
+  };
+};
+
+const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(Posts);
 
 export default PostsContainer;

@@ -4,24 +4,27 @@ import {
   newMessagesCreator,
   sendNewMessageCreator,
 } from "../../redux/reducers/messagesReducer";
+import { connect } from "react-redux";
 
-const MessagesContainer = (props) => {
-  let state = props.store.getState().messagesPage;
-
-  const onAddAnswer = () => {
-    props.store.dispatch(sendNewMessageCreator());
+const mapStateToProps = (state) => {
+  return {
+    msgData: state.messagesPage,
   };
-  const onNewMessageChage = (text) => {
-    props.store.dispatch(newMessagesCreator(text));
-  };
-
-  return (
-    <Messages
-      addAnswer={onAddAnswer}
-      newMessageChage={onNewMessageChage}
-      msgData={state}
-    />
-  );
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addAnswer: () => {
+      dispatch(sendNewMessageCreator());
+    },
+    newMessageChage: (text) => {
+      dispatch(newMessagesCreator(text));
+    },
+  };
+};
+
+const MessagesContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Messages);
 
 export default MessagesContainer;

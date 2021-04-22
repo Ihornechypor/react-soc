@@ -4,11 +4,11 @@ import PostsContainer from "../../components/Posts/PostsContainer";
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
 // import classes from "./Profile.module.css";
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <>
       <ProfileInfo profileBg={userBg} profileInfo="text text" />
-      <PostsContainer store={props.store} />
+      <PostsContainer />
     </>
   );
 };
