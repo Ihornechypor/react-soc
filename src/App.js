@@ -4,9 +4,9 @@ import Header from "./layouts/Header/Header";
 import Nav from "./layouts/Nav/Nav";
 import Main from "./layouts/Main/Main";
 import Profile from "./pages/Profile/Profile";
-import Messages from "./pages/Messages/Messages";
 import News from "./pages/News/News";
 import Music from "./pages/Music/Music";
+import MessagesContainer from "./pages/Messages/MessagesContainer";
 
 const App = (props) => {
   return (
@@ -16,7 +16,7 @@ const App = (props) => {
       <Main>
         <Route
           path="/messages"
-          render={() => <Messages store={props.store} />}
+          render={() => <MessagesContainer store={props.store} />}
         />
         <Route path="/profile" render={() => <Profile store={props.store} />} />
         <Route path="/news" render={() => <News />} />

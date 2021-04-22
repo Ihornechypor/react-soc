@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./MessagesLetters.module.css";
 
-const MessagesLetters = (props, ref) => {
+const MessagesLetters = (props) => {
   return (
     <div className={classes.messages__letters_box}>
       {props.msgs.map((item, index) => (
@@ -13,4 +13,4 @@ const MessagesLetters = (props, ref) => {
   );
 };
 
-export default React.forwardRef(MessagesLetters);
+export default MessagesLetters;

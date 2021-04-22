@@ -1,32 +1,24 @@
 import React from "react";
 import MessagesAutors from "../../components/MessagesAutors/MessagesAutors";
 import MessagesLetters from "../../components/MessagesLetters/MessagesLetters";
-import {
-  newMessagesCreator,
-  sendNewMessageCreator,
-} from "../../redux/reducers/messagesReducer";
 import classes from "./Messages.module.css";
 
 const Messages = (props) => {
-  let state = props.store.getState().messagesPage;
-
-  let newMsg = state.messagesNewTexts;
-
   const onAddAnswer = () => {
-    props.store.dispatch(sendNewMessageCreator());
+    props.addAnswer();
   };
   const onNewMessageChage = (e) => {
     let newMessage = e.target.value;
-    props.store.dispatch(newMessagesCreator(newMessage));
+    props.newMessageChage(newMessage);
   };
 
   return (
     <div className={classes.messages__box}>
-      <MessagesAutors data={state.messagesData} />
-      <MessagesLetters msgs={state.messagesText} />
+      <MessagesAutors data={props.msgData.messagesData} />
+      <MessagesLetters msgs={props.msgData.messagesText} />
       <div>
         <textarea
-          value={newMsg}
+          value={props.msgData.messagesNewTexts}
           placeholder="enter msg"
           onChange={onNewMessageChage}
           name=""
