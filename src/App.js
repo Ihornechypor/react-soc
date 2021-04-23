@@ -7,6 +7,7 @@ import Profile from "./pages/Profile/Profile";
 import News from "./pages/News/News";
 import Music from "./pages/Music/Music";
 import MessagesContainer from "./pages/Messages/MessagesContainer";
+import UsersContainer from "./pages/Users/UsersContainer";
 
 const App = (props) => {
   return (
@@ -18,6 +19,7 @@ const App = (props) => {
         <Route path="/profile" render={() => <Profile />} />
         <Route path="/news" render={() => <News />} />
         <Route path="/music" render={() => <Music />} />
+        <Route path="/users" render={() => <UsersContainer />} />
       </Main>
     </div>
   );

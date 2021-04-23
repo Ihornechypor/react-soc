@@ -7,12 +7,17 @@ const Nav = () => {
     <nav className={`app-nav ${classes.nav__box}`}>
       <ul className={classes.nav__box}>
         <li className={classes.nav__item}>
-          <NavLink to="/profile" activeClassName={classes.nav__item_active}>
+          <NavLink to="/profile" activeClassName={classes.nav__item}>
             Profile
           </NavLink>
         </li>
         <li className={classes.nav__item}>
-          <NavLink to="/messages" activeClassName={classes.nav__item_active}>
+          <NavLink to="/users" activeClassName={classes.nav__item}>
+            Users
+          </NavLink>
+        </li>
+        <li className={classes.nav__item}>
+          <NavLink to="/messages" activeClassName={classes.nav__item}>
             Messages
           </NavLink>
         </li>
@@ -21,13 +26,13 @@ const Nav = () => {
             to="/news
           
           "
-            activeClassName={classes.nav__item_active}
+            activeClassName={classes.nav__item}
           >
             News
           </NavLink>
         </li>
         <li className={classes.nav__item}>
-          <NavLink to="/music" activeClassName={classes.nav__item_active}>
+          <NavLink to="/music" activeClassName={classes.nav__item}>
             Music
           </NavLink>
         </li>
