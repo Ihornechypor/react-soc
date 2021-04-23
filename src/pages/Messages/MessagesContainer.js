@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
     msgData: state.messagesPage,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addAnswer: () => {

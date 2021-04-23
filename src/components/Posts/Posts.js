@@ -10,7 +10,7 @@ const Posts = (props) => {
 
   const onPostChage = () => {
     let newText = postRef.current.value;
-    props.postChage(newText);
+    props.onPostChage(newText);
   };
 
   return (
