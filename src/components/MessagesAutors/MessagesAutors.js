@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import classes from "./MessagesAutors.module.css";
 
 const MessagesAutor = (props) => {
-  console.log();
   return (
     <ul className={classes.messages__autors_box}>
       {props.data.map((item, index) => (

@@ -17,19 +17,15 @@ let initialState = {
 
 const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case UPD_NEW_MESSAGES_TEXTS: {
-      let stateCpoty = { ...state };
-      stateCpoty.messagesNewTexts = action.newMessage;
-      return stateCpoty;
-    }
-
+    case UPD_NEW_MESSAGES_TEXTS:
+      return { ...state, messagesNewTexts: action.newMessage };
     case SEND_MESSAGE:
-      let stateCpoty = { ...state };
-      let body = stateCpoty.messagesNewTexts;
-      stateCpoty.messagesNewTexts = "";
-      stateCpoty.messagesText = [...state.messagesText];
-      stateCpoty.messagesText.push({ id: 4, text: body });
-      return stateCpoty;
+      let body = state.messagesNewTexts;
+      return {
+        ...state,
+        messagesNewTexts: "",
+        messagesText: [...state.messagesText, { id: 4, text: body }],
+      };
     default:
       return state;
   }
