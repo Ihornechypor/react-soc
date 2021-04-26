@@ -3,3 +3,13 @@
 
   background: red;
 }
+
+.pag__btn_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pag__btn_active button {
+  color: red;
+  font-weight: 700;
+}
