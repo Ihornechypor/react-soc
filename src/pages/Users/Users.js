@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import userPlaceholder from "../../assets/Avatar/user.svg";
 import styles from "./Users.module.css";
 
@@ -31,12 +32,16 @@ const Users = (props) => {
             <li>
               <div className={styles.userAvatar}>
                 <div>
-                  <img
-                    src={
-                      u.photos.small != null ? u.photos.small : userPlaceholder
-                    }
-                    alt=""
-                  />
+                  <NavLink to={`/profile/${u.id}`}>
+                    <img
+                      src={
+                        u.photos.small != null
+                          ? u.photos.small
+                          : userPlaceholder
+                      }
+                      alt=""
+                    />
+                  </NavLink>
                 </div>
                 {u.followed ? (
                   <button

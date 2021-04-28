@@ -47,7 +47,6 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, totalUsersCount: action.totalCount };
 
     case IS_FETCHING:
-      console.log(action.isFetching);
       return { ...state, isFetching: action.isFetching };
     default:
       return state;
