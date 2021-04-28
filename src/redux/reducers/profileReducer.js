@@ -3,20 +3,16 @@ const ADD_NEW_POST_TEXT = "UPD-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 
 let initialState = {
-  userProfile: {},
   userPosts: [
     { id: 1, text: "hi", likes: 3 },
     { id: 2, text: "hello", likes: 1 },
   ],
   newPostText: "some text",
+  profile: null,
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_USER_PROFILE: {
-      console.log(state);
-      return { ...state, userProfile: action.userProfile };
-    }
     case ADD_POST: {
       let newPost = {
         id: 3,
@@ -34,6 +30,9 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         newPostText: action.newText,
       };
+    case SET_USER_PROFILE: {
+      return { ...state, profile: action.profile };
+    }
     default:
       return state;
   }
@@ -48,9 +47,9 @@ export const onPostChageActionCreator = (newText) => ({
   newText,
 });
 
-export const setUserProfile = (userProfile) => ({
+export const setUserProfile = (profile) => ({
   type: SET_USER_PROFILE,
-  userProfile,
+  profile,
 });
 
 export default profileReducer;
