@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
 import "./theme/global-styles.css";
-import Header from "./layouts/Header/Header";
+import HeaderContainer from "./layouts/Header/HeaderContainer.js";
 import Nav from "./layouts/Nav/Nav";
 import Main from "./layouts/Main/Main";
 import ProfileContainer from "./pages/Profile/ProfileContainer";
@@ -12,7 +12,7 @@ import UsersContainer from "./pages/Users/UsersContainer";
 const App = (props) => {
   return (
     <div className="app-wrapper">
-      <Header />
+      <HeaderContainer />
       <Nav />
       <Main>
         <Route path="/messages" render={() => <MessagesContainer />} />
