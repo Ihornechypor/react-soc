@@ -1,6 +1,6 @@
 import React from "react";
 import Preloader from "../common/Preloader/Preloader";
-import classes from "./ProfileInfo.module.css";
+// import classes from "./ProfileInfo.module.css";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -9,11 +9,12 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      <img
+      {/* <img
         src={props.profile.photos.large}
         alt=""
         className={classes.profile__info_bg}
-      />
+      /> */}
+      <p>{props.profile.fullName}</p>
     </div>
   );
 };
