@@ -12,7 +12,7 @@ let initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,
-  isFollowing: false,
+  isFollowing: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -52,7 +52,12 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, isFetching: action.isFetching };
 
     case IS_FOLLOWING:
-      return { ...state, isFollowing: action.status };
+      return {
+        ...state,
+        isFollowing: action.isFetching
+          ? [...state.isFollowing, action.userId]
+          : state.isFollowing.filter((id) => id !== action.userId),
+      };
 
     default:
       return state;
@@ -84,14 +89,15 @@ export const setTotalUsersCount = (totalCount) => ({
   totalCount,
 });
 
-export const togleFollowing = (status) => ({
-  type: IS_FOLLOWING,
-  status,
-});
-
 export const togleFetching = (isFetching) => ({
   type: IS_FETCHING,
   isFetching,
+});
+
+export const togleFollowing = (isFetching, userId) => ({
+  type: IS_FOLLOWING,
+  isFetching,
+  userId,
 });
 
 export default usersReducer;
