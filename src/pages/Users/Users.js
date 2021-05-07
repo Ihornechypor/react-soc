@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import userPlaceholder from "../../assets/Avatar/user.svg";
 import styles from "./Users.module.css";
-import { usersAPI } from "../../api/api";
 
 const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -48,13 +47,7 @@ const Users = (props) => {
                   <button
                     disabled={props.isFollowing.some((id) => id === u.id)}
                     onClick={() => {
-                      props.togleFollowing(true, u.id);
-                      usersAPI.unFollow(u.id).then((data) => {
-                        if (data.resultCode === 0) {
-                          props.unFollow(u.id);
-                        }
-                        props.togleFollowing(false, u.id);
-                      });
+                      props.unFollow(u.id);
                     }}
                   >
                     UnFollow
@@ -63,13 +56,7 @@ const Users = (props) => {
                   <button
                     disabled={props.isFollowing.some((id) => id === u.id)}
                     onClick={() => {
-                      props.togleFollowing(true, u.id);
-                      usersAPI.follow(u.id).then((data) => {
-                        if (data.resultCode === 0) {
-                          props.follow(u.id);
-                        }
-                        props.togleFollowing(false, u.id);
-                      });
+                      props.follow(u.id);
                     }}
                   >
                     Follow
