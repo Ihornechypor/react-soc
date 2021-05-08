@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 import MessagesAutors from "../../components/MessagesAutors/MessagesAutors";
 import MessagesLetters from "../../components/MessagesLetters/MessagesLetters";
 import classes from "./Messages.module.css";
@@ -12,6 +13,8 @@ const Messages = (props) => {
     let newMessage = e.target.value;
     props.newMessageChage(newMessage);
   };
+
+  if (!props.isAuth) return <Redirect to="/login" />;
 
   return (
     <div className={classes.messages__box}>
