@@ -22,4 +22,7 @@ export const usersAPI = {
       .delete(`follow/${userID}/`)
       .then((response) => response.data);
   },
+  getProfileData(userID) {
+    return instance.get(`/profile/${userID}`).then((response) => response.data);
+  },
 };
