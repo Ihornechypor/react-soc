@@ -54,12 +54,8 @@ export const setUserProfile = (profile) => ({
   profile,
 });
 
-export const getThisUserData = (match) => {
+export const getThisUserData = (userID) => {
   return (dispatch) => {
-    let userID = match;
-    if (!userID) {
-      userID = 2;
-    }
     usersAPI.getProfileData(userID).then((data) => {
       dispatch(setUserProfile(data));
     });
