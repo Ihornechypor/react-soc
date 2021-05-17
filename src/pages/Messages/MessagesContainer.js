@@ -9,7 +9,6 @@ import withAuthRedirect from "../../components/hoc/withAuthRedirect";
 const mapStateToProps = (state) => {
   return {
     msgData: state.messagesPage,
-    isAuth: state.auth.isAuth,
   };
 };
 
