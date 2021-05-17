@@ -7,7 +7,10 @@ const Profile = (props) => {
   return (
     <>
       <ProfileInfo profile={props.profile} />
-      <ProfileStatus status={"hello mu friends"} />
+      <ProfileStatus
+        status={props.status}
+        updateUserStatus={props.updateUserStatus}
+      />
       <PostsContainer />
     </>
   );

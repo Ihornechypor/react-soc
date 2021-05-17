@@ -23,7 +23,24 @@ export const usersAPI = {
       .then((response) => response.data);
   },
   getProfileData(userID) {
+    console.warn("old method use profileAPI");
+    return profileAPI.getProfileData(userID);
+  },
+};
+
+export const profileAPI = {
+  getProfileData(userID) {
     return instance.get(`/profile/${userID}`).then((response) => response.data);
+  },
+  getUserStatus(userID) {
+    return instance
+      .get(`/profile/status/${userID}`)
+      .then((response) => response.data);
+  },
+  updateUserStatus(status) {
+    return instance.put(`/profile/status`, {
+      status,
+    });
   },
 };
 
